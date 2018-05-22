@@ -1,0 +1,11 @@
+#menu{
+    height:700px;
+    outline: solid 2px green;
+    background-color: green;
+    overflow-y: auto;
+    width:100%;
+}
+#menu li{
+height:10%;
+    width:100%;
+}

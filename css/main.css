@@ -29,7 +29,8 @@ header img{
     height:100%;
 
 }
-ul{
+.menu{
+    overflow-y: auto;
     background-color: dimgrey;
     position: absolute;
     top:0px;
@@ -39,7 +40,7 @@ ul{
     width:50vw;
 
 }
-ul li{
+.menu li{
     height:7%;
     list-style: none;
     width:100%;
@@ -47,8 +48,9 @@ ul li{
     display:flex;
     align-items: center;
     justify-content: center;
+    position:relative;
 }
-ul li span{
+ li span{
     font-size: 50px;
 }
 form{
