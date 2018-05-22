@@ -1,11 +1,12 @@
-#menu{
-    height:700px;
+#selection{
+    height:0px;
     outline: solid 2px green;
     background-color: green;
     overflow-y: auto;
     width:100%;
+    transition: height 1s;
 }
-#menu li{
-height:10%;
+#selection li{
+height:70px;
     width:100%;
 }

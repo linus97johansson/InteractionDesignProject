@@ -1,19 +1,18 @@
-console.log("focused");
-$("#education").after($list);
+$("#education").focusin(function(){
+
+    $("#selection").css("height","700px");
+});
 
 
-    $eLearning.focus(function(){
-
-        alert("clicked");
-
-    })
-
+$("#education").blur(function () {
+    console.log("loss of focus");
+    $("#selection").css("height","0px");
 
 });
 
-$("#education>*").blur(function () {
-    console.log("loss of focus");
-  $("#menu").remove();
+$("#e_learning").click(function(){
+
+    alert("*Goes To nex stage*")
 
 });
 

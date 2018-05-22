@@ -31,7 +31,7 @@ header img{
 
 }
 .menu{
-    overflow-y: auto;
+    overflow-y: scroll;
     background-color: dimgrey;
     position: absolute;
     top:0px;
@@ -42,7 +42,7 @@ header img{
 
 }
 .menu li{
-    height:7%;
+    height:100px;
     list-style: none;
     width:100%;
     text-align: center;
