@@ -1,3 +1,10 @@
+/*
+variable to detrmine the with of the expanded hamburger menu.
+"vw" stands for viewport-width and is based on screensize, not
+parent element
+*/
+header{--menu-width: 50vw;}
+
 #selection{
     height:0px;
     outline: solid 2px green;
@@ -7,6 +14,92 @@
     transition: height 1s;
 }
 #selection li{
-height:70px;
+    height:70px;
     width:100%;
+}
+#selection.expanded{
+    height: 700px;
+}
+.menu{
+    z-index:-1;
+    width:0px;
+    transition: left 1s;
+    left:-100vw;
+}
+#darkener{
+    position: absolute;
+    height:100vh;
+    width: 0px;
+    transition: width 1s;
+    background-color:rgba(0,0,0,0.7);
+    z-index: -5;
+}
+#darkener.transition{z-index: 2;}
+#ham_menu.transition{z-index: 3; width:var(--menu-width);}
+
+#darkener.show{
+    width:100vw;
+    z-index: 2;
+}
+#ham_menu.show{
+    left:0vw;
+    width: var(--menu-width);
+    z-index: 3;
+}
+
+/* Menu style for tablet and above in size */
+@media only screen and (min-width: 1024px) {
+    #hamburger{
+        display:none;
+    }
+    #darkener{
+        display:none;
+    }
+
+    .menu{
+        height: initial;
+        position: initial;
+        flex-flow: row;
+        width:100vw;
+        order:4;
+        left:0vw;
+
+        z-index: 3;
+    }
+    .menu li{
+        display:flex;
+        flex-grow: 1;
+        flex-basis: 0;
+        position:relative;
+    }
+    #education{
+        position: relative;
+        width:100%;
+    }
+    .menu li span{
+        font-size: 26px;
+    }
+    #selection{
+        width:100vw;
+        background-color: blue;
+        position: absolute;
+        left:0px;
+        overflow-y:hidden;
+        display:inline;
+        flex-flow: column;
+        flex-wrap: wrap;
+    }
+    #selection li{
+        width:100px;
+        position:initial;
+        margin-right:0px;
+    }
+    #selection.expanded{
+        height: 300px;
+    }
+    header{
+        position: initial;
+
+    }
+
 }

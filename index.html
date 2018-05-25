@@ -10,12 +10,15 @@
 
 </head>
 <body>
+<ul id="darkener">
+    <li></li>
+</ul>
     <header>
-        <!-- Hee is the header with the navigation-->
-        <!-- Thinking th menu will be done with jQuery. on hover collecting the stuff from the menu.html file and displaying it under the hovered item. -->
-        <ul class="menu">
+        <!-- Here is the header with the navigation-->
+        <ul class="menu" id="ham_menu">
             <li><span>News</span></li>
             <li><span>Products</span></li>
+            <div id="expand">
             <li id="education" tabindex="0"><span>Education</span></li>
             <ul tabindex="0" id="selection">
                 <li tabindex="0"><span>Lorem</span></span></li>
@@ -35,12 +38,13 @@
                 <li tabindex="0"><span>Lorem</span></li>
                 <li tabindex="0"><span>Lorem</span></li>
             </ul>
+            </div>
             <li><span>Therapy Areas</span></li>
             <li><span>Science News</span></li>
             <li><span>About</span></li>
         </ul>
         <div class="top">
-            <img src="images/menu-alt-256.png" alt="menu">
+            <img src="images/menu-alt-256.png" alt="menu" id="hamburger">
             <img  alt="logo">
             <form action="">
             <input type="text"/>
@@ -59,4 +63,3 @@
     </footer>
 </body>
 </html>
-<script src="script/main.js"></script>

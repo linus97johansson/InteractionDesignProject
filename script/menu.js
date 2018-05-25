@@ -1,18 +1,38 @@
-$("#education").focusin(function(){
+$("#expand").focusin(function(){
 
-    $("#selection").css("height","700px");
+    $("#selection").addClass("expanded");
+    console.log("plx expand");
+});
+
+$("#education").blur(function () {
+    $("#selection").removeClass("expanded");
+
+});
+
+$("#hamburger").click(function(){
+
+    $("#darkener").addClass("show");
+    $("#ham_menu").addClass("show");
+
 });
 
 
-$("#education").blur(function () {
-    console.log("loss of focus");
-    $("#selection").css("height","0px");
+//This hides the menu when you click on the dark section.
+//the .transition class is used to create a smooth transition
+
+$("#darkener").click(function(){
+    $("#darkener").removeClass("show");
+    $("#ham_menu").removeClass("show");
+    $("#darkener").addClass("transition");
+    $("#ham_menu").addClass("transition");
+    setTimeout(function(){
+        $("#darkener").removeClass("transition");
+        $("#ham_menu").removeClass("transition"); }, 1000);
 
 });
 
 $("#e_learning").click(function(){
 
-    alert("*Goes To nex stage*")
 
 });
 
