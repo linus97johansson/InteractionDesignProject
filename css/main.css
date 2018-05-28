@@ -2,7 +2,7 @@
 *{
     padding: 0px;
     margin:0px;
-    outline: 1px solid red;
+   /* outline: 1px solid red;*/
 }
 body {
     background-color:lightgray;
@@ -41,15 +41,18 @@ header img{
     width:50vw;
     min-width: 0;
 }
-.menu li{
+.menu span {
+    font-size: 36px;
     height:100px;
     list-style: none;
     width:100%;
     text-align: center;
     display:flex;
+
     align-items: center;
     justify-content: center;
     position:relative;
+    border-bottom:solid 1px darkgrey;
 }
  li span{
     font-size: 50px;

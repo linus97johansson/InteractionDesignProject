@@ -33,6 +33,7 @@ $("#darkener").click(function(){
 
 $("#e_learning").click(function(){
 
+    alert("go to next if signed in!");
 
 });
 
