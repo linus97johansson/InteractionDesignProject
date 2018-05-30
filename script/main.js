@@ -3,6 +3,10 @@ $(document).ready(function ($) {
 
         console.log("success");
     });
+    $.getScript('script/login.js', function () {
+
+        console.log("success");
+    });
 
 
 

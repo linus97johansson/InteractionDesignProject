@@ -5,8 +5,71 @@
 	bottom: 0;
 	right: 0;
 	background: rgba(0,0,0,0.5);
+	opacity: 0;
+	transition: opacity 0.4s;
+}
+#modal-container.open{
+	opacity: 1;
+
 }
 #modal{
 	background: #ffF;
-	
+	max-width: 250px;
+	z-index: 100;
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	top: 50%;
+	overflow: hidden;
+
+}
+#modal.open{
+}
+#modal form{
+	display: grid;
+	grid-template-columns: repeat(4, 100%);
+	grid-template-rows: auto;
+	margin: 0;
+	transition: transform .3s ease;
+	/*will-change: transform;*/
+}
+.close-modal{
+	position: absolute;
+	right: 0;
+	top: 0;
+	padding: 10px;
+	color: #FFF;
+	background: #000;
+	text-decoration: none;
+}
+.close-modal:hover{
+	background: #EEE;
+	color: #000;
+}
+#modal form fieldset{
+	width: 100%;
+	height: 100%;
+	display: block;
+	border: none;
+	box-sizing: border-box;
+	padding: 20px;
+}
+#modal input, #modal select{
+	display:block;
+}
+#modal label{
+	margin-top: 10px;
+}
+.loading{
+	display: block;
+	width: 100px;
+	height: 100px;
+	border-radius: 50px;
+	/*background: #777;*/
+	border: 2px dashed #000;
+	animation: rotation 5s linear 2s infinite;
+}
+@keyframes rotation {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
 }

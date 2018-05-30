@@ -1,49 +1,61 @@
 <div id="modal-container">
 	<div id="modal">
-		<a href="#" alt="close" class="close-modal">X</a>
-		<div id="step1">
-			<form method="POST">
+		<a href="#" alt="close" title="close" class="close-modal">X</a>
+		<form id="singupform">
+			<fieldset>
 				<label>
-
+					
+					select contry
 					<select>
-						<option>Danmark</option>
-						<option>Finland</option>
-						<option>Norway</option>
-						<option>Sweden</option>
+						<option value="SE">Sweden</option>
+						<option value="FI">Finland</option>
+						<option value="DK">Danmark</option>
+						<option value="NO">Norway</option>
 					</select>
 				</label>
-				<input type="submit" name="Next" value="Next"/>
-			</form>
-		</div>
-		<div id="step2">
-			<form>
-				<lable>
-					First name
-					<input type="text"></lable>
-				<lable>
-					Last name
-					<input type="text"></lable>
-				<lable>
-					Ocupation
-					<select>
-						<option value="Doctor">Doctor</option>
-						<option value="Nurce">Nurce</option>
-						<option value="Cleaner">Cleaner</option>
-						<option value="Secretary">Secretary</option>
-						<option value="Validator">Validator</option>
-					</select>
-				</lable>
-				<lable>
-					Speciality
-					<input type="text"></lable>
-				<lable>
-					workmail (username)
-					<input type="email"></lable>
-				<lable>
-					Password
-					<input type="password"></lable>
-				<input type="submit" name="validate" value="validate">
-			</form>
-		</div>
+				<button id="ContryDone">Next</button>
+			</fieldset>
+			<fieldset disabled="disabled">
+				<label>
+					fname
+					<input type="text" name="firstname">
+				</label>
+				<label>
+					ename
+					<input type="text" name="lastname">
+				</label>
+				ocupation
+				<select>
+					<option>Nurce</option>
+					<option>Doctor</option>
+				</select>
+				<label>
+					speciality
+					<input type="text" name="spec">
+				</label>
+
+				<label>
+					username(email)
+					<input type="email" name="username">
+				</label>
+				<label>
+					password
+					<input type="password" name="password">
+				</label>
+				<input type="submit" name="submit" value="Validate">
+			</fieldset>
+			<fieldset>
+				wait system
+				<div class="loading"></div>
+			</fieldset>
+			<fieldset>
+				done
+				newsletters
+				<button>Yes</button>
+				<button>No</button>
+				<button>Costumize</button>
+			</fieldset>
+			
+		</form>
 	</div>
 </div>
