@@ -2,18 +2,18 @@
 	<div id="modal">
 		<a href="#" alt="close" title="close" class="close-modal">X</a>
 		<form id="singupform">
-			<fieldset>
+			<fieldset class="current">
 				<label>
 					
 					select contry
-					<select>
-						<option value="SE">Sweden</option>
+					<select name="contry" >
+						<option value="SV">Sweden</option>
 						<option value="FI">Finland</option>
 						<option value="DK">Danmark</option>
 						<option value="NO">Norway</option>
 					</select>
 				</label>
-				<button id="ContryDone">Next</button>
+				<button class="prevefered" id="ContryDone">Next</button>
 			</fieldset>
 			<fieldset disabled="disabled">
 				<label>
@@ -25,9 +25,11 @@
 					<input type="text" name="lastname">
 				</label>
 				ocupation
-				<select>
-					<option>Nurce</option>
-					<option>Doctor</option>
+				<select name="ocupation">
+					<option>doctor</option>
+					<option>nurse</option>
+					<option>medical secretary</option>
+					<option>boss</option>
 				</select>
 				<label>
 					speciality
@@ -42,7 +44,7 @@
 					password
 					<input type="password" name="password">
 				</label>
-				<input type="submit" name="submit" value="Validate">
+				<input class="prevefered" type="submit" name="submit" value="Validate">
 			</fieldset>
 			<fieldset>
 				wait system
@@ -51,9 +53,9 @@
 			<fieldset>
 				done
 				newsletters
-				<button>Yes</button>
-				<button>No</button>
-				<button>Costumize</button>
+				<button id="yes">Yes</button>
+				<button id="no">No</button>
+				<button id="costum">Costumize</button>
 			</fieldset>
 			
 		</form>
