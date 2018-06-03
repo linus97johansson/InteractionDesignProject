@@ -79,6 +79,18 @@ $(document).ready(function ($) {
 			e.preventDefault();
 			$('#modal-container').removeClass('open');
 		})
+		$(".close-modal").click(function (e) {
+			e.preventDefault();
+			$('#modal-container').removeClass('open');
+		})
+		$("#modal-container").click(function (e) {
+			e.preventDefault();
+			$('#modal-container').removeClass('open');
+		})
+		$("#modal").click(function (e) {
+			e.stopPropagation();
+		});
+		
 
 
 
