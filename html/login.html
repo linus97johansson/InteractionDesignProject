@@ -2,7 +2,7 @@
 	<div id="modal">
 		<a href="#" alt="close" title="close" class="close-modal">X</a>
 		<form id="singupform">
-			<fieldset class="current">
+			<fieldset class="current step1">
 				<label>
 					
 					select contry
@@ -15,7 +15,7 @@
 				</label>
 				<button class="prevefered" id="ContryDone">Next</button>
 			</fieldset>
-			<fieldset disabled="disabled">
+			<fieldset disabled="disabled" class="step2">
 				<label>
 					fname
 					<input type="text" name="firstname">
@@ -24,13 +24,15 @@
 					ename
 					<input type="text" name="lastname">
 				</label>
-				ocupation
-				<select name="ocupation">
-					<option>doctor</option>
-					<option>nurse</option>
-					<option>medical secretary</option>
-					<option>boss</option>
-				</select>
+				<label>
+					ocupation
+					<select name="ocupation">
+						<option>doctor</option>
+						<option>nurse</option>
+						<option>medical secretary</option>
+						<option>boss</option>
+					</select>
+				</label>
 				<label>
 					speciality
 					<input type="text" name="spec">
@@ -44,20 +46,48 @@
 					password
 					<input type="password" name="password">
 				</label>
-				<input class="prevefered" type="submit" name="submit" value="Validate">
+				<button class="back">back</button>
+				<button class="FI DK prevefered">Next</button>
+				<input class="SV NO prevefered" type="submit" name="submit" value="Validate">
 			</fieldset>
-			<fieldset>
+			<fieldset class="FI step3" >
+				 First name, Last name, City and Workplace
+				 SV-number
+				<button class="back">back</button>
+				<input class="SV NO prevefered" type="submit" name="submit" value="Validate">
+			</fieldset>
+			<fieldset class="DK step4">
+					
+				<label>
+				Postal address
+				<input type="text" name="postal">
+				</label>
+				<label>
+				Zip-code
+					<input type="number" name="zip">
+				</label>
+				<label>
+				Department
+					<input type="text" name="department">
+				</label>
+				<label>
+				Phone number
+					<input type="number" name="phone">
+				</label>
+				<button class="back">back</button>
+				<input class="DK prevefered" type="submit" name="submit" value="Validate">
+			</fieldset>
+			<fieldset class="step5">
 				wait system
 				<div class="loading"></div>
 			</fieldset>
-			<fieldset>
+			<fieldset class="step6">
 				done
 				newsletters
 				<button id="yes">Yes</button>
 				<button id="no">No</button>
 				<button id="costum">Costumize</button>
 			</fieldset>
-			
 		</form>
 	</div>
 </div>

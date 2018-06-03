@@ -22,19 +22,21 @@
 	z-index: 100;
 	position: absolute;
 	left: 50%;
-	transform: translate(-50%, -50%) scale(.6);
-	top: 50%;
+	transform: translate(-50%, -50%) scale(.6) rotateX(-90deg);
+	top: 45%;
 	overflow: hidden;
-	transition: transform 0.2s ease;
+	transition: transform .3s ease, top .2s ease;
 	will-change: transform;
+
 
 }
 .open #modal{
-	transform: translate(-50%, -50%) scale(1);
+	transform: translate(-50%, -50%) scale(1) rotateX(0deg);
+	top: 50%;
 }
 #modal form{
 	display: grid;
-	grid-template-columns: repeat(4, 100%);
+	grid-template-columns: repeat(6, 100%);
 	grid-template-rows: auto;
 	margin: 0;
 	transition: transform .3s ease;
@@ -60,14 +62,27 @@
 	border: none;
 	box-sizing: border-box;
 	padding: 20px;
+	position: relative;
+	padding-bottom: 40px;
+	padding-top: 40px;
 }
-#modal input, #modal select{
+#modal label input, #modal label select{
 	display:block;
+	width: 100%;
+	padding: 5px;
+	box-sizing: border-box;
 }
 #modal label{
 	margin-top: 10px;
 }
-#modal .current .prevefered{
+#modal .prevefered{
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	padding: 5px;
+	background: blue;
+	border:none;
+	cursor: pointer;
 	/*Prefered button to get on*/
 }
 .loading{
@@ -78,6 +93,22 @@
 	/*background: #777;*/
 	border: 2px dashed #000;
 	animation: rotation 5s linear 2s infinite;
+}
+form .FI, form .DK, form .SV, form .NO{
+	display: none;
+
+}
+form.FI .FI{
+	display: block;
+} 
+form.SV .SV{
+	display: block;
+}
+form.DK .DK{
+	display: block;
+}
+ form.NO .NO{
+	display: block;
 }
 @keyframes rotation {
     from {transform: rotate(0deg);}

@@ -10,7 +10,15 @@ $(document).ready(function ($) {
 		var elem = document.createElement('div');
 		elem.innerHTML = data;
 		document.body.append(elem);
-
+		var user = {
+				'firstName': "",
+				'lastName': "",
+				'profession': "",
+				'speciality': "",
+				'username': "",
+				'password': "",
+				'country': "",
+			}
 
 		$('#ContryDone').click(function(e) {
 			e.preventDefault()
@@ -18,21 +26,24 @@ $(document).ready(function ($) {
 			var next = this.parentNode.nextElementSibling.classList.add('current');
 			var next = this.parentNode.classList.remove('current');
 			var form = this.parentNode.parentNode.style.transform =  'translateX(-100%)'; //transform: translateX(-100%);
+			contry = $('select[name="contry"]')[0].value;
+			user.country = contry;
+			this.parentNode.parentNode.className  = "";
+			this.parentNode.parentNode.classList.add(contry)
+
 			
 		});
 		$('#singupform').submit(function(e) {
 			e.preventDefault();
-			var form = this.style.transform =  'translateX(-200%)'; //transform: translateX(-100%);
+			var form = this.style.transform =  'translateX(-400%)'; //transform: translateX(-100%);
 			var temp = this;
-			var user = {
-				'firstName': temp.firstname.value,
-				'lastName': temp.lastname.value,
-				'profession': temp.ocupation.value,
-				'speciality': temp.spec.value,
-				'username': temp.username.value,
-				'password': temp.password.value,
-				'country': temp.contry.value,
-			}
+			user.firstName = temp.firstname.value,
+			user.lastName = temp.lastname.value,
+			user.profession = temp.ocupation.value,
+			user.speciality = temp.spec.value,
+			user.username = temp.username.value,
+			user.password = temp.password.value,
+			
 			
 			$.ajax({
 				url: './script/users.json',
@@ -42,10 +53,9 @@ $(document).ready(function ($) {
 			.done(function(data) {
 				console.log("success");
 				if(checkUser(user, data)){
-					var form = temp.style.transform =  'translateX(-300%)'; //transform: translateX(-100%);
+					var form = temp.style.transform =  'translateX(-500%)'; //transform: translateX(-100%);
 					
 				}else{
-					debugger
 					var form = temp.style.transform =  'translateX(-100%)'; //transform: translateX(-100%);
 					
 				}
@@ -90,7 +100,20 @@ $(document).ready(function ($) {
 		$("#modal").click(function (e) {
 			e.stopPropagation();
 		});
-		
+		$(".step2 .back").click(function(e) {
+			e.preventDefault();
+			this.parentNode.parentNode.style.transform = "translateX(0%)"
+			this.parentNode.classList.remove("current");
+			$(".step1").addClass('current')
+		});
+		$(".step3 .back").click(function(e) {
+			e.preventDefault();
+			this.parentNode.parentNode.style.transform = "translateX(-100%)"
+		});
+		$(".step4 .back").click(function(e) {
+			e.preventDefault();
+			this.parentNode.parentNode.style.transform = "translateX(-100%)"
+		});
 
 
 
