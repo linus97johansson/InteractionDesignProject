@@ -60,3 +60,6 @@ header img{
 form{
     margin-right:50px;
 }
+a{
+    cursor: pointer;  
+}

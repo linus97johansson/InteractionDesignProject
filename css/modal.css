@@ -6,19 +6,19 @@
 	right: 0;
 	background: rgba(0,0,0,0.5);
 	opacity: 0;
-	transition: opacity 0.4s, z-index 0.5;
+	transition: opacity 0.4s, z-index 0.5s;
 	z-index: 0;
 	
 }
 #modal-container.open{
 	opacity: 1;
-	z-index: 3;
+	z-index: 5;
 	
 
 }
 #modal{
+	width: 90%;
 	background: #ffF;
-	max-width: 250px;
 	z-index: 100;
 	position: absolute;
 	left: 50%;
@@ -33,6 +33,17 @@
 .open #modal{
 	transform: translate(-50%, -50%) scale(1) rotateX(0deg);
 	top: 50%;
+}
+#modal-container.closing{
+	transition: opacity .4s, z-index 0.5s;
+	z-index: 0;
+	opacity: 0;
+
+}
+.closing #modal{
+	transition: transform .3s ease, top .2s ease;
+	transform: translate(-50%, -50%) scale(.6) rotateX(-90deg);
+	top: 40%;
 }
 #modal form{
 	display: grid;
@@ -50,6 +61,7 @@
 	color: #FFF;
 	background: #000;
 	text-decoration: none;
+	z-index: 8;
 }
 .close-modal:hover{
 	background: #EEE;
@@ -73,18 +85,48 @@
 	box-sizing: border-box;
 }
 #modal label{
+	display: block;
 	margin-top: 10px;
+}
+#modal .error input, #modal .error select{
+	background-color: rgba(255, 0, 0, 0.3) !important;
+}
+.errorMessage{
+	max-height: 0;
+	transition: max-height .2s ease;
+	overflow: hidden;
+	font-size: .7em;
+}
+.error .errorMessage{
+	max-height: 1.7em;
+
+}
+.extra{
+	font-size: .8em;
+	color: darkgrey
+}
+#modal .back{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	padding: 10px;
+	border: none;
+	color: blue;
+	background: #777;
+	cursor: pointer;
 }
 #modal .prevefered{
 	position: absolute;
 	bottom: 0px;
 	right: 0px;
-	padding: 5px;
+	padding: 10px;
 	background: blue;
 	border:none;
 	cursor: pointer;
+	color: #FFF;
 	/*Prefered button to get on*/
 }
+
 .loading{
 	display: block;
 	width: 100px;
@@ -113,4 +155,11 @@ form.DK .DK{
 @keyframes rotation {
     from {transform: rotate(0deg);}
     to {transform: rotate(360deg);}
+}
+
+
+@media  (min-width: 1024px) {
+	#modal{
+		max-width: 250px;
+	}
 }

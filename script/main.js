@@ -1,3 +1,4 @@
+var logedIn = false;
 $(document).ready(function ($) {
     $.getScript('script/menu.js', function () {
 

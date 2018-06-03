@@ -5,23 +5,30 @@ parent element
 */
 header{--menu-width: 50vw;}
 
+header .top{
+    z-index: 1;
+}
 #selection{
     height:0px;
     overflow-y: auto;
     width:100%;
     transition: height 1s;
 }
-#selection span{
+#selection a{
     height:70px;
-    width:100%;
+    width:49%;
     background-color: #333333;
     color:white;
+    display: inline-block;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 70px
 }
 #selection.expanded{
     height: 700px;
 }
 .menu{
-    z-index:-1;
+    z-index:2;
     width:0px;
     transition: left 1s;
     left:-100vw;
@@ -39,12 +46,12 @@ header{--menu-width: 50vw;}
 
 #darkener.show{
     width:100vw;
-    z-index: 2;
+    z-index: 3;
 }
 #ham_menu.show{
     left:0vw;
     width: var(--menu-width);
-    z-index: 3;
+    z-index: 4;
 }
 
 /* Menu style for tablet and above in size */
@@ -52,6 +59,7 @@ header{--menu-width: 50vw;}
 
     header .top{
         height:80px;
+        
     }
 
     #hamburger{
@@ -70,7 +78,7 @@ header{--menu-width: 50vw;}
         order:4;
         left:0vw;
         overflow: hidden;
-        z-index: 3;
+        z-index: 4;
         font-family: Arimo;
 
     }
@@ -103,16 +111,16 @@ header{--menu-width: 50vw;}
         flex-wrap: wrap;
         overflow: hidden;
     }
-    #selection span{
+    #selection a{
         flex-grow:0;
         width:150px;
-        display:initial;
+        display:block;
         position:initial;
         font-size: 37px;
         width:initial;
         height:initial;
         border:none;
-        margin:10px;
+        
     }
     #selection.expanded{
         height: 150px;

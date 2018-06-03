@@ -31,9 +31,11 @@ $("#darkener").click(function(){
 
 });
 
-$("#e_learning").click(function(){
-
-    alert("go to next if signed in!");
+$("#e_learning").click(function(e){
+    if(!logedIn){
+        e.preventDefault();
+        alert("go to next if signed in!");
+    }
 
 });
 

@@ -1,11 +1,11 @@
 <div id="modal-container">
 	<div id="modal">
 		<a href="#" alt="close" title="close" class="close-modal">X</a>
-		<form id="singupform">
+		<form id="singupform" novalidate="novalidate">
 			<fieldset class="current step1">
 				<label>
 					
-					select contry
+					Select contry
 					<select name="contry" >
 						<option value="SV">Sweden</option>
 						<option value="FI">Finland</option>
@@ -17,34 +17,40 @@
 			</fieldset>
 			<fieldset disabled="disabled" class="step2">
 				<label>
-					fname
+					First name
 					<input type="text" name="firstname">
+					<p class="errorMessage">Is this your FIRST name?</p>
 				</label>
 				<label>
-					ename
+					Last name
 					<input type="text" name="lastname">
+					<p class="errorMessage">Is this your LAST name?</p>
 				</label>
 				<label>
-					ocupation
+					Ocupation
 					<select name="ocupation">
 						<option>doctor</option>
 						<option>nurse</option>
 						<option>medical secretary</option>
 						<option>boss</option>
 					</select>
+					<p class="errorMessage">Are you sure this is your work title</p>
 				</label>
 				<label>
-					speciality
+					Speciality
 					<input type="text" name="spec">
+					<p class="errorMessage">Culd it be an other Speciality?</p>
 				</label>
 
 				<label>
-					username(email)
+					Username(email)
 					<input type="email" name="username">
+					<p class="errorMessage">username Taken or not an email</p>
 				</label>
 				<label>
-					password
+					Password <span class="extra"> - min 8 characters</span>
 					<input type="password" name="password">
+					<p class="errorMessage">To short password</p>
 				</label>
 				<button class="back">back</button>
 				<button class="FI DK prevefered">Next</button>
@@ -56,7 +62,7 @@
 				<button class="back">back</button>
 				<input class="SV NO prevefered" type="submit" name="submit" value="Validate">
 			</fieldset>
-			<fieldset class="DK step4">
+			<fieldset disabled="disabled" class="DK step4">
 					
 				<label>
 				Postal address
@@ -77,11 +83,11 @@
 				<button class="back">back</button>
 				<input class="DK prevefered" type="submit" name="submit" value="Validate">
 			</fieldset>
-			<fieldset class="step5">
+			<fieldset disabled="disabled" class="step5">
 				wait system
 				<div class="loading"></div>
 			</fieldset>
-			<fieldset class="step6">
+			<fieldset  class="step6">
 				done
 				newsletters
 				<button id="yes">Yes</button>
